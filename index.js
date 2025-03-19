@@ -1,20 +1,65 @@
-// we marking variable as a const we have two variable (celsius) or (fahrenheit).
-const Celsius = document.querySelector("#celsius");
-Fahrenheit = document.querySelector("#fahrenheit");
+document.addEventListener("DOMContentLoaded", function () {
+  const celsiusInput = document.getElementById("celsius");
+  const fahrenheitInput = document.getElementById("fahrenheit");
+  const kphInput = document.getElementById("kph");
+  const mphInput = document.getElementById("mph");
+  const mpsInput = document.getElementById("MPS");
+  const knInput = document.getElementById("kn");
 
-// we are adding window EventListener or arrow function.
-window.addEventListener("load", () => celsius.focus());
+  // Celsius to Fahrenheit Conversion
+  celsiusInput.addEventListener("input", function () {
+    let celsius = parseFloat(celsiusInput.value);
+    if (!isNaN(celsius)) {
+      fahrenheitInput.value = ((celsius * 9) / 5 + 32).toFixed(2);
+    } else {
+      fahrenheitInput.value = "";
+    }
+  });
 
-// we are converting  Fahrenheit into celsius.
-celsius.addEventListener("input", () => {
-  Fahrenheit.value = ((celsius.value * 9) / 5 + 32).toFixed(2);
-  //Handling the error by using zero value.
-  if (!celsius.value) fahrenheit.value = "";
-});
+  fahrenheitInput.addEventListener("input", function () {
+    let fahrenheit = parseFloat(fahrenheitInput.value);
+    if (!isNaN(fahrenheit)) {
+      celsiusInput.value = (((fahrenheit - 32) * 5) / 9).toFixed(2);
+    } else {
+      celsiusInput.value = "";
+    }
+  });
 
-// we are converting celsius into Fahrenheit.
-fahrenheit.addEventListener("input", () => {
-  celsius.value = (((fahrenheit.value - 32) * 5) / 9).toFixed(2);
-  //Handling the error by using zero value.
-  if (!fahrenheit.value) celsius.value = "";
+  // KPH to MPH Conversion
+  kphInput.addEventListener("input", function () {
+    let kph = parseFloat(kphInput.value);
+    if (!isNaN(kph)) {
+      mphInput.value = (kph * 0.621371).toFixed(2);
+    } else {
+      mphInput.value = "";
+    }
+  });
+
+  mphInput.addEventListener("input", function () {
+    let mph = parseFloat(mphInput.value);
+    if (!isNaN(mph)) {
+      kphInput.value = (mph / 0.621371).toFixed(2);
+    } else {
+      kphInput.value = "";
+    }
+  });
+
+  // MPS to Knots Conversion
+  mpsInput.addEventListener("input", function () {
+    let mps = parseFloat(mpsInput.value);
+    if (!isNaN(mps)) {
+      knInput.value = (mps * 1.94384).toFixed(2);
+    } else {
+      knInput.value = "";
+    }
+  });
+
+  knInput.addEventListener("input", function () {
+    let kn = parseFloat(knInput.value);
+    if (!isNaN(kn)) {
+      mpsInput.value = (kn / 1.94384).toFixed(2);
+    } else {
+      mpsInput.value = "";
+    }
+  });
 });
