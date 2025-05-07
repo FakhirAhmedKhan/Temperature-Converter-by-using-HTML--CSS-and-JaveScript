@@ -30,4 +30,21 @@ The **Temperature Converter** is a web-based application that allows users to co
 ![image](https://github.com/user-attachments/assets/930b2d30-d069-48bc-b6b4-810ea82b4461)
 
 
+## 🌐 Deployment You can deploy this app easily using GitHub Pages:
+
+Push your project to a GitHub repository.
+
+Go to Settings > Pages.
+
+Under Source, choose the branch (e.g., main) and folder (/root or /docs).
+
+Click Save.
+
+Your app will be available at:
+
+🌐 Deployment(https://temperature-converter-by-using-html-css-and-jave-script.vercel.app/)
+
+Alternatively, you can use platforms like Netlify, Vercel, or Firebase Hosting to deploy the app by uploading your project folder and following their deployment instructions.
+
+
 ---
